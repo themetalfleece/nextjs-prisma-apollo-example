@@ -1,6 +1,6 @@
 import { nonNull, stringArg } from 'nexus';
 import { ObjectDefinitionBlock } from 'nexus/dist/core';
-import prisma from '../../lib/prisma';
+import prisma from '../../../lib/prisma';
 
 export const signUpUserDefinition = (t: ObjectDefinitionBlock<'Mutation'>) => {
   t.field('signUpUser', {

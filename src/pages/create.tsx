@@ -1,7 +1,7 @@
 import Router from 'next/router';
 import { useState } from 'react';
 import Layout from '../components/Layout';
-import { useCreateDraftPostMutation } from '../features/posts/createDraftPost.mutation';
+import { useCreateDraftPostMutation } from '../features/posts/mutations/createDraftPost.mutation';
 
 const Draft = () => {
   const [title, setTitle] = useState('');

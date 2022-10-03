@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Layout from '../components/Layout';
-import { useDraftPostsQuery } from '../features/posts/draftPosts.query';
+import { useDraftPostsQuery } from '../features/posts/queries/draftPosts.query';
 
 const Post = ({ post }) => (
   <Link href="/p/[id]" as={`/p/${post.id}`}>

@@ -1,8 +1,8 @@
 import Router, { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
-import { useDeletePostMutation } from '../../features/posts/deletePost.mutation';
-import { usePostQuery } from '../../features/posts/post.query';
-import { usePublishPostMutation } from '../../features/posts/publishPost.mutation';
+import { useDeletePostMutation } from '../../features/posts/mutations/deletePost.mutation';
+import { usePublishPostMutation } from '../../features/posts/mutations/publishPost.mutation';
+import { usePostQuery } from '../../features/posts/queries/post.query';
 
 function Post() {
   const postId = useRouter().query.id;

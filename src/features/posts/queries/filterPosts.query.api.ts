@@ -1,5 +1,5 @@
 import { nullable, ObjectDefinitionBlock, stringArg } from 'nexus/dist/core';
-import prisma from '../../lib/prisma';
+import prisma from '../../../lib/prisma';
 
 export const filterPostsDefinition = (t: ObjectDefinitionBlock<'Query'>) => {
   t.list.field('filterPosts', {

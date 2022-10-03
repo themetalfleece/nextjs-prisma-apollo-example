@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Layout from '../components/Layout';
-import { usePostsFeedQuery } from '../features/posts/postsFeed.query';
+import { usePostsFeedQuery } from '../features/posts/queries/postsFeed.query';
 
 const Post = ({ post }) => (
   <Link href="/p/[id]" as={`/p/${post.id}`}>

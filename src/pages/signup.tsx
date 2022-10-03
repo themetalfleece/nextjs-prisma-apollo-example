@@ -1,7 +1,7 @@
 import Router from 'next/router';
 import { useState } from 'react';
 import Layout from '../components/Layout';
-import { useSignUpUserMutation } from '../features/users/signUpUser.mutation';
+import { useSignUpUserMutation } from '../features/users/mutations/signUpUser.mutation';
 
 const Signup = () => {
   const [name, setName] = useState('');
