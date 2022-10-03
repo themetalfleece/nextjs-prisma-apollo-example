@@ -8,10 +8,10 @@ A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `dat
 scalar DateTime
 
 type Mutation {
-  createDraft(authorEmail: String, content: String, title: String!): Post
+  createDraftPost(authorEmail: String, content: String, title: String!): Post
   deletePost(postId: String): Post
-  publish(postId: String): Post
-  signupUser(email: String!, name: String): User
+  publishPost(postId: String): Post
+  signUpUser(email: String!, name: String): User
 }
 
 type Post {
@@ -23,7 +23,7 @@ type Post {
 }
 
 type Query {
-  drafts: [Post]
+  draftPosts: [Post]
   feed: [Post]
   filterPosts(searchString: String): [Post]
   post(postId: String!): Post

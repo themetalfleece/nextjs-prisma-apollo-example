@@ -1,8 +1,8 @@
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 
-const FeedQuery = gql`
-  query FeedQuery {
+const PostsFeedQuery = gql`
+  query PostsFeed {
     feed {
       id
       title
@@ -16,7 +16,7 @@ const FeedQuery = gql`
   }
 `;
 
-export const useFeedQuery = () =>
-  useQuery(FeedQuery, {
+export const usePostsFeedQuery = () =>
+  useQuery(PostsFeedQuery, {
     fetchPolicy: 'cache-and-network',
   });

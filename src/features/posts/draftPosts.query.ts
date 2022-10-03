@@ -1,9 +1,9 @@
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 
-const DraftsQuery = gql`
-  query DraftsQuery {
-    drafts {
+const DraftPostsQuery = gql`
+  query DraftPosts {
+    draftPosts {
       id
       title
       content
@@ -16,7 +16,7 @@ const DraftsQuery = gql`
   }
 `;
 
-export const useDraftsQuery = () =>
-  useQuery(DraftsQuery, {
+export const useDraftPostsQuery = () =>
+  useQuery(DraftPostsQuery, {
     fetchPolicy: 'cache-and-network',
   });

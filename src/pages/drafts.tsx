@@ -1,6 +1,6 @@
-import Layout from '../components/Layout';
 import Link from 'next/link';
-import { useDraftsQuery } from '../features/posts/drafts.query';
+import Layout from '../components/Layout';
+import { useDraftPostsQuery } from '../features/posts/draftPosts.query';
 
 const Post = ({ post }) => (
   <Link href="/p/[id]" as={`/p/${post.id}`}>
@@ -21,7 +21,7 @@ const Post = ({ post }) => (
 );
 
 const Drafts = () => {
-  const { loading, error, data } = useDraftsQuery();
+  const { loading, error, data } = useDraftPostsQuery();
 
   if (loading) {
     return <div>Loading ...</div>;
@@ -35,7 +35,7 @@ const Drafts = () => {
       <div className="page">
         <h1>Drafts</h1>
         <main>
-          {data.drafts.map(post => (
+          {data.draftPosts.map(post => (
             <div key={post.id} className="post">
               <Post post={post} />
             </div>

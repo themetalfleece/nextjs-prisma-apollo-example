@@ -3,7 +3,7 @@ import { ObjectDefinitionBlock } from 'nexus/dist/core';
 import prisma from '../../lib/prisma';
 
 export const signUpUserDefinition = (t: ObjectDefinitionBlock<'Mutation'>) => {
-  t.field('signupUser', {
+  t.field('signUpUser', {
     type: 'User',
     args: {
       name: stringArg(),

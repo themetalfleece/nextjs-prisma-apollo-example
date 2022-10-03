@@ -1,15 +1,15 @@
-import Layout from '../../components/Layout';
 import Router, { useRouter } from 'next/router';
+import Layout from '../../components/Layout';
+import { useDeletePostMutation } from '../../features/posts/deletePost.mutation';
 import { usePostQuery } from '../../features/posts/post.query';
-import { usePublishMutation } from '../../features/posts/publish.mutation';
-import { useDeleteMutation } from '../../features/posts/delete.mutation';
+import { usePublishPostMutation } from '../../features/posts/publishPost.mutation';
 
 function Post() {
   const postId = useRouter().query.id;
   const { loading, error, data } = usePostQuery({ postId });
 
-  const [publish] = usePublishMutation();
-  const [deletePost] = useDeleteMutation();
+  const [publish] = usePublishPostMutation();
+  const [deletePost] = useDeletePostMutation();
 
   if (loading) {
     console.log('loading');

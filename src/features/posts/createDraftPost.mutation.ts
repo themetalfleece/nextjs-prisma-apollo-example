@@ -1,13 +1,17 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 
-const CreateDraftMutation = gql`
-  mutation CreateDraftMutation(
+const CreateDraftPostMutation = gql`
+  mutation CreateDraftPost(
     $title: String!
     $content: String
     $authorEmail: String!
   ) {
-    createDraft(title: $title, content: $content, authorEmail: $authorEmail) {
+    createDraftPost(
+      title: $title
+      content: $content
+      authorEmail: $authorEmail
+    ) {
       id
       title
       content
@@ -20,4 +24,5 @@ const CreateDraftMutation = gql`
   }
 `;
 
-export const useCreateDraftMutation = () => useMutation(CreateDraftMutation);
+export const useCreateDraftPostMutation = () =>
+  useMutation(CreateDraftPostMutation);

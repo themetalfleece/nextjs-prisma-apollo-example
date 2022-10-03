@@ -1,6 +1,6 @@
-import Layout from '../components/Layout';
 import Link from 'next/link';
-import { useFeedQuery } from '../features/posts/feed.query';
+import Layout from '../components/Layout';
+import { usePostsFeedQuery } from '../features/posts/postsFeed.query';
 
 const Post = ({ post }) => (
   <Link href="/p/[id]" as={`/p/${post.id}`}>
@@ -21,7 +21,7 @@ const Post = ({ post }) => (
 );
 
 const Blog = () => {
-  const { loading, error, data } = useFeedQuery();
+  const { loading, error, data } = usePostsFeedQuery();
 
   if (loading) {
     return <div>Loading ...</div>;

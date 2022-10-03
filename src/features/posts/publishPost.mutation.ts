@@ -1,9 +1,9 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 
-const PublishMutation = gql`
-  mutation PublishMutation($postId: String!) {
-    publish(postId: $postId) {
+const PublishPostMutation = gql`
+  mutation PublishPost($postId: String!) {
+    publishPost(postId: $postId) {
       id
       title
       content
@@ -16,4 +16,4 @@ const PublishMutation = gql`
   }
 `;
 
-export const usePublishMutation = () => useMutation(PublishMutation);
+export const usePublishPostMutation = () => useMutation(PublishPostMutation);

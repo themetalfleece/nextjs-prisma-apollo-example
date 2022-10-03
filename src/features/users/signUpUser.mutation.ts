@@ -1,9 +1,9 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 
-const SignupMutation = gql`
-  mutation SignupMutation($name: String, $email: String!) {
-    signupUser(name: $name, email: $email) {
+const SignUpUserMutation = gql`
+  mutation SignUpUser($name: String, $email: String!) {
+    signUpUser(name: $name, email: $email) {
       id
       name
       email
@@ -11,4 +11,4 @@ const SignupMutation = gql`
   }
 `;
 
-export const useSignUpMutation = () => useMutation(SignupMutation);
+export const useSignUpUserMutation = () => useMutation(SignUpUserMutation);

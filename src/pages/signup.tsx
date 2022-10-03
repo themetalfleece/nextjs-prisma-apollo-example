@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import Layout from '../components/Layout';
 import Router from 'next/router';
-import { useSignUpMutation } from '../features/users/signUpUser.mutation';
+import { useState } from 'react';
+import Layout from '../components/Layout';
+import { useSignUpUserMutation } from '../features/users/signUpUser.mutation';
 
 const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
-  const [signup] = useSignUpMutation();
+  const [signup] = useSignUpUserMutation();
 
   return (
     <Layout>

@@ -1,8 +1,10 @@
 import { nonNull, ObjectDefinitionBlock, stringArg } from 'nexus/dist/core';
 import prisma from '../../lib/prisma';
 
-export const createDraftDefinition = (t: ObjectDefinitionBlock<'Mutation'>) => {
-  t.field('createDraft', {
+export const createDraftPostDefinition = (
+  t: ObjectDefinitionBlock<'Mutation'>,
+) => {
+  t.field('createDraftPost', {
     type: 'Post',
     args: {
       title: nonNull(stringArg()),

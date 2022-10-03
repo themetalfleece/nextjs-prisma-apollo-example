@@ -1,8 +1,8 @@
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 
-const DeleteMutation = gql`
-  mutation DeleteMutation($postId: String!) {
+const DeletePostMutation = gql`
+  mutation DeletePost($postId: String!) {
     deletePost(postId: $postId) {
       id
       title
@@ -16,4 +16,4 @@ const DeleteMutation = gql`
   }
 `;
 
-export const useDeleteMutation = () => useMutation(DeleteMutation);
+export const useDeletePostMutation = () => useMutation(DeletePostMutation);

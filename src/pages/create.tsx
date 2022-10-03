@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import Layout from '../components/Layout';
 import Router from 'next/router';
-import { useCreateDraftMutation } from '../features/posts/createDraft.mutation';
+import { useState } from 'react';
+import Layout from '../components/Layout';
+import { useCreateDraftPostMutation } from '../features/posts/createDraftPost.mutation';
 
 const Draft = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [authorEmail, setAuthorEmail] = useState('');
 
-  const [createDraft] = useCreateDraftMutation();
+  const [createDraft] = useCreateDraftPostMutation();
 
   return (
     <Layout>

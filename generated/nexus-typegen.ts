@@ -70,10 +70,10 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
   Mutation: { // field return type
-    createDraft: NexusGenRootTypes['Post'] | null; // Post
+    createDraftPost: NexusGenRootTypes['Post'] | null; // Post
     deletePost: NexusGenRootTypes['Post'] | null; // Post
-    publish: NexusGenRootTypes['Post'] | null; // Post
-    signupUser: NexusGenRootTypes['User'] | null; // User
+    publishPost: NexusGenRootTypes['Post'] | null; // Post
+    signUpUser: NexusGenRootTypes['User'] | null; // User
   }
   Post: { // field return type
     author: NexusGenRootTypes['User'] | null; // User
@@ -83,7 +83,7 @@ export interface NexusGenFieldTypes {
     title: string | null; // String
   }
   Query: { // field return type
-    drafts: Array<NexusGenRootTypes['Post'] | null> | null; // [Post]
+    draftPosts: Array<NexusGenRootTypes['Post'] | null> | null; // [Post]
     feed: Array<NexusGenRootTypes['Post'] | null> | null; // [Post]
     filterPosts: Array<NexusGenRootTypes['Post'] | null> | null; // [Post]
     post: NexusGenRootTypes['Post'] | null; // Post
@@ -98,10 +98,10 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenFieldTypeNames {
   Mutation: { // field return type name
-    createDraft: 'Post'
+    createDraftPost: 'Post'
     deletePost: 'Post'
-    publish: 'Post'
-    signupUser: 'User'
+    publishPost: 'Post'
+    signUpUser: 'User'
   }
   Post: { // field return type name
     author: 'User'
@@ -111,7 +111,7 @@ export interface NexusGenFieldTypeNames {
     title: 'String'
   }
   Query: { // field return type name
-    drafts: 'Post'
+    draftPosts: 'Post'
     feed: 'Post'
     filterPosts: 'Post'
     post: 'Post'
@@ -126,7 +126,7 @@ export interface NexusGenFieldTypeNames {
 
 export interface NexusGenArgTypes {
   Mutation: {
-    createDraft: { // args
+    createDraftPost: { // args
       authorEmail?: string | null; // String
       content?: string | null; // String
       title: string; // String!
@@ -134,10 +134,10 @@ export interface NexusGenArgTypes {
     deletePost: { // args
       postId?: string | null; // String
     }
-    publish: { // args
+    publishPost: { // args
       postId?: string | null; // String
     }
-    signupUser: { // args
+    signUpUser: { // args
       email: string; // String!
       name?: string | null; // String
     }
