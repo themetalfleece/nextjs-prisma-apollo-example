@@ -2,7 +2,7 @@ import { ObjectDefinitionBlock } from 'nexus/dist/core';
 import { createDraftPostDefinition } from './mutations/createDraftPost.mutation.api';
 import { deletePostDefinition } from './mutations/deletePost.mutation.api';
 import { publishPostDefinition } from './mutations/publishPost.mutation.api';
-import { draftPostsDefinition } from './queries/draftsPosts.query.api';
+import { draftPostsDefinition } from './queries/draftPosts.query.api';
 import { filterPostsDefinition } from './queries/filterPosts.query.api';
 import { postDefinition } from './queries/post.query.api';
 import { feedDefinition } from './queries/postsFeed.query.api';
