@@ -1,5 +1,15 @@
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
+import { UserI } from '../../users/user.sourceType';
+import { PostI } from '../post.sourceType';
+
+type _DraftPostI = Pick<PostI, 'id' | 'title' | 'content' | 'published'> & {
+  author: Pick<UserI, 'id' | 'name'>;
+};
+
+interface QueryI {
+  draftPosts: _DraftPostI[];
+}
 
 const DraftPostsQuery = gql`
   query DraftPosts {
@@ -17,6 +27,6 @@ const DraftPostsQuery = gql`
 `;
 
 export const useDraftPostsQuery = () =>
-  useQuery(DraftPostsQuery, {
+  useQuery<QueryI>(DraftPostsQuery, {
     fetchPolicy: 'cache-and-network',
   });
