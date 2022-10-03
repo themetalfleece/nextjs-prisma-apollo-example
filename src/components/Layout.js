@@ -1,4 +1,4 @@
-import Header from './Header'
+import Header from './Header';
 
 const Layout = props => (
   <div>
@@ -40,6 +40,6 @@ const Layout = props => (
       }
     `}</style>
   </div>
-)
+);
 
-export default Layout
+export default Layout;

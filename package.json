@@ -12,7 +12,7 @@
     "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
     "generate:prisma": "prisma generate",
     "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\"",
-    "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json pages/api",
+    "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json src/pages/api",
     "lint": "eslint --fix --quiet lib/**/*.ts pages/**/*.ts[x]",
     "format": "prettier --loglevel silent --write lib/**/*.ts pages/**/*.ts"
   },
@@ -49,6 +49,7 @@
     "typescript-eslint-parser": "^22.0.0"
   },
   "prisma": {
-    "seed": "ts-node prisma/seed.ts"
+    "seed": "ts-node src/prisma/seed.ts",
+    "schema": "src/prisma/schema.prisma"
   }
 }
