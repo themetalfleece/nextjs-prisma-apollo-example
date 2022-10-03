@@ -1,19 +1,19 @@
 import { ApolloServer } from 'apollo-server-micro';
 import { DateTimeResolver } from 'graphql-scalars';
+import cors from 'micro-cors';
 import { NextApiHandler } from 'next';
 import { asNexusMethod, makeSchema, objectType } from 'nexus';
 import path from 'path';
-import cors from 'micro-cors';
-import { Post } from '../../features/posts/post.objectType';
-import { User } from '../../features/users/user.objectType';
 import {
   postMutationDefinitions,
   postQueryDefinitions,
 } from '../../features/posts';
+import { Post } from '../../features/posts/post.objectType.api';
 import {
   userMutationDefinitions,
   userQueryDefinitions,
 } from '../../features/users';
+import { User } from '../../features/users/user.objectType.api';
 
 export const GQLDate = asNexusMethod(DateTimeResolver, 'date');
 

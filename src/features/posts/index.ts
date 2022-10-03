@@ -1,11 +1,11 @@
 import { ObjectDefinitionBlock } from 'nexus/dist/core';
-import { createDraftDefinition } from './createDraft.mutation';
-import { deletePostDefinition } from './delete.mutation';
-import { draftsDefinition } from './drafts.query';
-import { feedDefinition } from './feed.query';
-import { filterPostsDefinition } from './filterPosts.query';
-import { postDefinition } from './post.query';
-import { publishDefinition } from './publish.mutation';
+import { createDraftDefinition } from './createDraft.mutation.api';
+import { deletePostDefinition } from './delete.mutation.api';
+import { draftsDefinition } from './drafts.query.api';
+import { feedDefinition } from './feed.query.api';
+import { filterPostsDefinition } from './filterPosts.query.api';
+import { postDefinition } from './post.query.api';
+import { publishDefinition } from './publish.mutation.api';
 
 export const postQueryDefinitions = (t: ObjectDefinitionBlock<'Query'>) => {
   draftsDefinition(t);
