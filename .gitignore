@@ -2,3 +2,5 @@ node_modules/
 src/generated/
 .next/
 generated
+# will be generated with prismerge
+src/prisma/schema.prisma
