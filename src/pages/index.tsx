@@ -1,22 +1,6 @@
 import Layout from '../components/Layout';
 import Link from 'next/link';
-import gql from 'graphql-tag';
-import { useQuery } from '@apollo/client';
-
-const FeedQuery = gql`
-  query FeedQuery {
-    feed {
-      id
-      title
-      content
-      published
-      author {
-        id
-        name
-      }
-    }
-  }
-`;
+import { useFeedQuery } from '../features/posts/feed.query';
 
 const Post = ({ post }) => (
   <Link href="/p/[id]" as={`/p/${post.id}`}>
@@ -37,9 +21,7 @@ const Post = ({ post }) => (
 );
 
 const Blog = () => {
-  const { loading, error, data } = useQuery(FeedQuery, {
-    fetchPolicy: 'cache-and-network',
-  });
+  const { loading, error, data } = useFeedQuery();
 
   if (loading) {
     return <div>Loading ...</div>;

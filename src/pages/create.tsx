@@ -1,35 +1,14 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Router from 'next/router';
-import gql from 'graphql-tag';
-import { useMutation } from '@apollo/client';
+import { useCreateDraftMutation } from '../features/posts/createDraft.mutation';
 
-const CreateDraftMutation = gql`
-  mutation CreateDraftMutation(
-    $title: String!
-    $content: String
-    $authorEmail: String!
-  ) {
-    createDraft(title: $title, content: $content, authorEmail: $authorEmail) {
-      id
-      title
-      content
-      published
-      author {
-        id
-        name
-      }
-    }
-  }
-`;
-
-function Draft(props) {
+const Draft = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [authorEmail, setAuthorEmail] = useState('');
 
-  const [createDraft, { loading, error, data }] =
-    useMutation(CreateDraftMutation);
+  const [createDraft] = useCreateDraftMutation();
 
   return (
     <Layout>
@@ -109,6 +88,6 @@ function Draft(props) {
       `}</style>
     </Layout>
   );
-}
+};
 
 export default Draft;

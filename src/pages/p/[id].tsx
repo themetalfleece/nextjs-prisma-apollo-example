@@ -1,61 +1,15 @@
 import Layout from '../../components/Layout';
 import Router, { useRouter } from 'next/router';
-import gql from 'graphql-tag';
-import { useQuery, useMutation } from '@apollo/client';
-
-const PostQuery = gql`
-  query PostQuery($postId: String!) {
-    post(postId: $postId) {
-      id
-      title
-      content
-      published
-      author {
-        id
-        name
-      }
-    }
-  }
-`;
-
-const PublishMutation = gql`
-  mutation PublishMutation($postId: String!) {
-    publish(postId: $postId) {
-      id
-      title
-      content
-      published
-      author {
-        id
-        name
-      }
-    }
-  }
-`;
-
-const DeleteMutation = gql`
-  mutation DeleteMutation($postId: String!) {
-    deletePost(postId: $postId) {
-      id
-      title
-      content
-      published
-      author {
-        id
-        name
-      }
-    }
-  }
-`;
+import { usePostQuery } from '../../features/posts/post.query';
+import { usePublishMutation } from '../../features/posts/publish.mutation';
+import { useDeleteMutation } from '../../features/posts/delete.mutation';
 
 function Post() {
   const postId = useRouter().query.id;
-  const { loading, error, data } = useQuery(PostQuery, {
-    variables: { postId },
-  });
+  const { loading, error, data } = usePostQuery({ postId });
 
-  const [publish] = useMutation(PublishMutation);
-  const [deletePost] = useMutation(DeleteMutation);
+  const [publish] = usePublishMutation();
+  const [deletePost] = useDeleteMutation();
 
   if (loading) {
     console.log('loading');
@@ -84,7 +38,7 @@ function Post() {
         <p>{data.post.content}</p>
         {!data.post.published && (
           <button
-            onClick={async e => {
+            onClick={async () => {
               await publish({
                 variables: {
                   postId,
@@ -97,7 +51,7 @@ function Post() {
           </button>
         )}
         <button
-          onClick={async e => {
+          onClick={async () => {
             await deletePost({
               variables: {
                 postId,

@@ -1,24 +1,13 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
-import Router, { useRouter } from 'next/router';
-import gql from 'graphql-tag';
-import { useMutation } from '@apollo/client';
+import Router from 'next/router';
+import { useSignUpMutation } from '../features/users/signUpUser.mutation';
 
-const SignupMutation = gql`
-  mutation SignupMutation($name: String, $email: String!) {
-    signupUser(name: $name, email: $email) {
-      id
-      name
-      email
-    }
-  }
-`;
-
-function Signup(props) {
+const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
-  const [signup] = useMutation(SignupMutation);
+  const [signup] = useSignUpMutation();
 
   return (
     <Layout>
@@ -85,6 +74,6 @@ function Signup(props) {
       `}</style>
     </Layout>
   );
-}
+};
 
 export default Signup;

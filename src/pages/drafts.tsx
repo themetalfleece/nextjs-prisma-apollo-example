@@ -1,22 +1,6 @@
 import Layout from '../components/Layout';
 import Link from 'next/link';
-import gql from 'graphql-tag';
-import { useQuery } from '@apollo/client';
-
-const DraftsQuery = gql`
-  query DraftsQuery {
-    drafts {
-      id
-      title
-      content
-      published
-      author {
-        id
-        name
-      }
-    }
-  }
-`;
+import { useDraftsQuery } from '../features/posts/drafts.query';
 
 const Post = ({ post }) => (
   <Link href="/p/[id]" as={`/p/${post.id}`}>
@@ -37,9 +21,7 @@ const Post = ({ post }) => (
 );
 
 const Drafts = () => {
-  const { loading, error, data } = useQuery(DraftsQuery, {
-    fetchPolicy: 'cache-and-network',
-  });
+  const { loading, error, data } = useDraftsQuery();
 
   if (loading) {
     return <div>Loading ...</div>;
