@@ -1,8 +1,8 @@
-import React, { useState } from "react"
-import Layout from "../components/Layout"
-import Router from "next/router"
-import gql from "graphql-tag"
-import { useMutation } from "@apollo/client"
+import React, { useState } from 'react';
+import Layout from '../components/Layout';
+import Router from 'next/router';
+import gql from 'graphql-tag';
+import { useMutation } from '@apollo/client';
 
 const CreateDraftMutation = gql`
   mutation CreateDraftMutation(
@@ -21,22 +21,22 @@ const CreateDraftMutation = gql`
       }
     }
   }
-`
+`;
 
 function Draft(props) {
-  const [title, setTitle] = useState("")
-  const [content, setContent] = useState("")
-  const [authorEmail, setAuthorEmail] = useState("")
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [authorEmail, setAuthorEmail] = useState('');
 
   const [createDraft, { loading, error, data }] =
-    useMutation(CreateDraftMutation)
+    useMutation(CreateDraftMutation);
 
   return (
     <Layout>
       <div>
         <form
-          onSubmit={async (e) => {
-            e.preventDefault()
+          onSubmit={async e => {
+            e.preventDefault();
 
             await createDraft({
               variables: {
@@ -44,27 +44,27 @@ function Draft(props) {
                 content,
                 authorEmail,
               },
-            })
-            Router.push("/drafts")
+            });
+            Router.push('/drafts');
           }}
         >
           <h1>Create Draft</h1>
           <input
             autoFocus
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={e => setTitle(e.target.value)}
             placeholder="Title"
             type="text"
             value={title}
           />
           <input
-            onChange={(e) => setAuthorEmail(e.target.value)}
+            onChange={e => setAuthorEmail(e.target.value)}
             placeholder="Author (email adress)"
             type="text"
             value={authorEmail}
           />
           <textarea
             cols={50}
-            onChange={(e) => setContent(e.target.value)}
+            onChange={e => setContent(e.target.value)}
             placeholder="Content"
             rows={8}
             value={content}
@@ -74,7 +74,7 @@ function Draft(props) {
             type="submit"
             value="Create"
           />
-          <a className="back" href="#" onClick={() => Router.push("/")}>
+          <a className="back" href="#" onClick={() => Router.push('/')}>
             or Cancel
           </a>
         </form>
@@ -88,7 +88,7 @@ function Draft(props) {
           align-items: center;
         }
 
-        input[type="text"],
+        input[type='text'],
         textarea {
           width: 100%;
           padding: 0.5rem;
@@ -97,7 +97,7 @@ function Draft(props) {
           border: 0.125rem solid rgba(0, 0, 0, 0.2);
         }
 
-        input[type="submit"] {
+        input[type='submit'] {
           background: #ececec;
           border: 0;
           padding: 1rem 2rem;
@@ -108,7 +108,7 @@ function Draft(props) {
         }
       `}</style>
     </Layout>
-  )
+  );
 }
 
-export default Draft
+export default Draft;

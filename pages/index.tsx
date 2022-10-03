@@ -1,7 +1,7 @@
-import Layout from "../components/Layout"
-import Link from "next/link"
-import gql from "graphql-tag"
-import { useQuery } from "@apollo/client"
+import Layout from '../components/Layout';
+import Link from 'next/link';
+import gql from 'graphql-tag';
+import { useQuery } from '@apollo/client';
 
 const FeedQuery = gql`
   query FeedQuery {
@@ -16,7 +16,7 @@ const FeedQuery = gql`
       }
     }
   }
-`
+`;
 
 const Post = ({ post }) => (
   <Link href="/p/[id]" as={`/p/${post.id}`}>
@@ -34,18 +34,18 @@ const Post = ({ post }) => (
       `}</style>
     </a>
   </Link>
-)
+);
 
 const Blog = () => {
   const { loading, error, data } = useQuery(FeedQuery, {
-    fetchPolicy: "cache-and-network",
-  })
+    fetchPolicy: 'cache-and-network',
+  });
 
   if (loading) {
-    return <div>Loading ...</div>
+    return <div>Loading ...</div>;
   }
   if (error) {
-    return <div>Error: {error.message}</div>
+    return <div>Error: {error.message}</div>;
   }
 
   return (
@@ -75,7 +75,7 @@ const Blog = () => {
         }
       `}</style>
     </Layout>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;

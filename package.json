@@ -12,7 +12,9 @@
     "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
     "generate:prisma": "prisma generate",
     "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\"",
-    "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json pages/api"
+    "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json pages/api",
+    "lint": "eslint --fix --quiet lib/**/*.ts pages/**/*.ts[x]",
+    "format": "prettier --loglevel silent --write lib/**/*.ts pages/**/*.ts"
   },
   "dependencies": {
     "@apollo/client": "3.7.0",
@@ -35,9 +37,16 @@
     "@types/micro-cors": "0.1.2",
     "@types/node": "16.11.62",
     "@types/react": "18.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
     "ts-node": "10.9.1",
     "prisma": "4.4.0",
-    "typescript": "4.8.4"
+    "typescript": "4.8.4",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "typescript-eslint-parser": "^22.0.0"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

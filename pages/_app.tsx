@@ -1,8 +1,8 @@
-import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  uri: "/api",
+  uri: '/api',
 });
 
 function MyApp({ Component, pageProps }) {
