@@ -1,3 +1,7 @@
+# This is based on an [example](https://github.com/prisma/prisma-examples/tree/latest/typescript/graphql-nextjs), with the directory structure having changed.
+
+Original readme:
+
 # Fullstack Example with Next.js (GraphQL API)
 
 This example shows how to implement a **fullstack app in TypeScript with [Next.js](https://nextjs.org/)** using [React](https://reactjs.org/), [Apollo Client](https://www.apollographql.com/docs/react/) (frontend), [Nexus Schema](https://nxs.li/components/standalone/schema) and [Prisma Client](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client) (backend). It uses a SQLite database file with some initial dummy data which you can find at [`./prisma/dev.db`](./prisma/dev.db).
