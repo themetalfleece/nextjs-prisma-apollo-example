@@ -1,5 +1,5 @@
 import { nonNull, ObjectDefinitionBlock, stringArg } from 'nexus/dist/core';
-import prisma from '../../../lib/prisma';
+import prisma from '../../../prisma/prisma';
 
 export const postDefinition = (t: ObjectDefinitionBlock<'Query'>) => {
   t.field('post', {

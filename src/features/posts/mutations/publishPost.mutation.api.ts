@@ -1,5 +1,5 @@
 import { ObjectDefinitionBlock, stringArg } from 'nexus/dist/core';
-import prisma from '../../../lib/prisma';
+import prisma from '../../../prisma/prisma';
 
 export const publishPostDefinition = (t: ObjectDefinitionBlock<'Mutation'>) => {
   t.nullable.field('publishPost', {

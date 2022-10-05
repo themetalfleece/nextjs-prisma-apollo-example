@@ -1,5 +1,5 @@
 import { objectType } from 'nexus';
-import prisma from '../../lib/prisma';
+import prisma from '../../prisma/prisma';
 
 export const User = objectType({
   name: 'User',

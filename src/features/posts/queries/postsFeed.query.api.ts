@@ -1,5 +1,5 @@
 import { ObjectDefinitionBlock } from 'nexus/dist/core';
-import prisma from '../../../lib/prisma';
+import prisma from '../../../prisma/prisma';
 
 export const feedDefinition = (t: ObjectDefinitionBlock<'Query'>) => {
   t.list.field('feed', {
