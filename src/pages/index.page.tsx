@@ -1,24 +1,6 @@
-import Link from 'next/link';
 import Layout from '../components/Layout';
+import Post from '../components/Post';
 import { usePostsFeedQuery } from '../features/posts/queries/postsFeed.query';
-
-const Post = ({ post }) => (
-  <Link href="/p/[id]" as={`/p/${post.id}`}>
-    <a>
-      <h2>{post.title}</h2>
-      <small>By {post.author.name}</small>
-      <p>{post.content}</p>
-      <style jsx>{`
-        a {
-          text-decoration: none;
-          color: inherit;
-          padding: 2rem;
-          display: block;
-        }
-      `}</style>
-    </a>
-  </Link>
-);
 
 const Blog = () => {
   const { loading, error, data } = usePostsFeedQuery();
