@@ -1,7 +1,7 @@
 model Post {
-  authorId  Int?
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  authorId  String?
   content   String?
-  id        Int     @id @default(autoincrement())
   published Boolean @default(false)
   title     String
   author    User?   @relation(fields: [authorId], references: [id])

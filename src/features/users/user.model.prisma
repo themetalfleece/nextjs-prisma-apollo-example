@@ -1,6 +1,6 @@
 model User {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
   email String  @unique
-  id    Int     @id @default(autoincrement())
   name  String?
   posts Post[]
 }

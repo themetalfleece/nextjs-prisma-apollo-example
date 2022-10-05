@@ -11,7 +11,7 @@
     "start": "next start",
     "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
     "generate:prisma": "rimraf src/prisma/schema.prisma && prismerge -i prismerge.json && prisma generate",
-    "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json src/pages/api",
+    "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json src/pages/api/index.page",
     "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\"",
     "lint": "eslint --fix --quiet lib/**/*.ts pages/**/*.ts[x]",
     "format": "prettier --loglevel silent --write lib/**/*.ts pages/**/*.ts"
@@ -51,7 +51,6 @@
     "typescript-eslint-parser": "^22.0.0"
   },
   "prisma": {
-    "seed": "ts-node src/prisma/seed.ts",
     "schema": "src/prisma/schema.prisma"
   }
 }
