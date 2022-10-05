@@ -8,7 +8,7 @@ type _FeedI = Pick<PostI, 'id' | 'title' | 'content' | 'published'> & {
 };
 
 interface QueryI {
-  draftPosts: _FeedI[];
+  feed: _FeedI[];
 }
 
 const PostsFeedQuery = gql`
