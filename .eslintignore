@@ -10,5 +10,7 @@ yarn-error.log
 .vscode
 # test coverage
 coverage
-
+# generated files
 generated
+# next config
+next.config.js
