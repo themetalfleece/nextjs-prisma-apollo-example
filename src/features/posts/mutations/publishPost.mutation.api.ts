@@ -9,7 +9,7 @@ export const publishPostDefinition = (t: ObjectDefinitionBlock<'Mutation'>) => {
     },
     resolve: (_, { postId }) => {
       return prisma.post.update({
-        where: { id: Number(postId) },
+        where: { id: postId },
         data: { published: true },
       });
     },

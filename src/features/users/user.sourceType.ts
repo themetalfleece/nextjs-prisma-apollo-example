@@ -1,7 +1,7 @@
 import { PostI } from '../posts/post.sourceType';
 
 export interface UserI {
-  id: number;
+  id: string;
   name: string;
   email: string;
   posts?: PostI[];

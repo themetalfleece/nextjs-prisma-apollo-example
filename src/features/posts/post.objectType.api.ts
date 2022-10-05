@@ -4,7 +4,7 @@ import prisma from '../../prisma/prisma';
 export const Post = objectType({
   name: 'Post',
   definition(t) {
-    t.int('id');
+    t.string('id');
     t.string('title');
     t.nullable.string('content');
     t.boolean('published');
@@ -13,7 +13,7 @@ export const Post = objectType({
       resolve: parent =>
         prisma.post
           .findUnique({
-            where: { id: Number(parent.id) },
+            where: { id: parent.id },
           })
           .author(),
     });

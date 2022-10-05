@@ -9,7 +9,7 @@ export const postDefinition = (t: ObjectDefinitionBlock<'Query'>) => {
     },
     resolve: (_, args) => {
       return prisma.post.findUnique({
-        where: { id: Number(args.postId) },
+        where: { id: args.postId },
       });
     },
   });

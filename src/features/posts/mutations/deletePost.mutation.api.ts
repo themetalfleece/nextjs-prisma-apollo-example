@@ -9,7 +9,7 @@ export const deletePostDefinition = (t: ObjectDefinitionBlock<'Mutation'>) => {
     },
     resolve: (_, { postId }) => {
       return prisma.post.delete({
-        where: { id: Number(postId) },
+        where: { id: postId },
       });
     },
   });

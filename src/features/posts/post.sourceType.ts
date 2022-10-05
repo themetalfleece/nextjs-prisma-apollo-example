@@ -1,7 +1,7 @@
 import { UserI } from '../users/user.sourceType';
 
 export interface PostI {
-  id: number;
+  id: string;
   title: string;
   content: string;
   published: boolean;
