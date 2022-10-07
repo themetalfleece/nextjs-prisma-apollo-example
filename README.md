@@ -53,6 +53,13 @@ yarn dev
 
 The app is now running, navigate to [`http://localhost:3000/`](http://localhost:3000/) in your browser to explore its UI.
 
+### 5. Edit template parts
+
+* Remove the `.github/workflows/upgrade-dependencies.yml files`, since it contains the workflow to upgrade all dependencies on a daily basis.
+  * n case you would like to keep it, remove line 7 from it.
+* Edit the name & version in the `package.json` file.
+* Edit the code in `src`, apart from the `src/prisma` directory.
+
 <details><summary>Expand for a tour through the UI of the app</summary>
 
 <br />
