@@ -4,7 +4,7 @@ on:
     - cron: '0 0 * * *'
 jobs:
   upgrade:
-    if: github.repository == 'themetalfleece/nodejs-typescript-template'
+    if: github.repository == 'themetalfleece/nextjs-prisma-apollo-example'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
