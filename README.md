@@ -56,7 +56,7 @@ The app is now running, navigate to [`http://localhost:3000/`](http://localhost:
 ### 5. Edit template parts
 
 * Remove the `.github/workflows/upgrade-dependencies.yml files`, since it contains the workflow to upgrade all dependencies on a daily basis.
-  * n case you would like to keep it, remove lines 7, 30, 32 from it.
+  * n case you would like to keep it, remove lines 7, 30, 32 from it. Also, change the git user name in line 28.
 * Edit the name & version in the `package.json` file.
 * Edit the code in `src`, apart from the `src/prisma` directory.
 
