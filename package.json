@@ -7,7 +7,7 @@
   "author": "",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "yarn generate && next build",
     "start": "next start",
     "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
     "generate:prisma": "rimraf src/prisma/schema.prisma && prismerge -i prismerge.json && prisma generate",
