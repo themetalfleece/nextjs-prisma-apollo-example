@@ -1,9 +1,3 @@
-import { UserI } from '../users/user.sourceType';
+import { FieldTypes } from '../../graphql/types/fields.type';
 
-export interface PostI {
-  id: string;
-  title: string;
-  content: string;
-  published: boolean;
-  author?: UserI;
-}
+export type PostI = FieldTypes['Post'];
