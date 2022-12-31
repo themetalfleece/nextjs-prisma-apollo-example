@@ -1,12 +1,12 @@
-# This is based on an [example](https://github.com/prisma/prisma-examples/tree/latest/typescript/graphql-nextjs), with the directory structure having changed.
+## This is based on an [example](https://github.com/prisma/prisma-examples/tree/latest/typescript/graphql-nextjs), with the directory structure having changed.
 
-Its dependencies are updated daily, so it can also be used as a template.
+## Its dependencies are updated daily, so it can also be used as a template.
 
 # Fullstack Example with Next.js (GraphQL API)
 
 This example shows how to implement a **fullstack app in TypeScript with [Next.js](https://nextjs.org/)** using [React](https://reactjs.org/), [Apollo Client](https://www.apollographql.com/docs/react/) (frontend), [Nexus Schema](https://nxs.li/components/standalone/schema) and [Prisma Client](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client) (backend). It uses a MongoDB database, which can easily change.
 
-## Getting started
+# Getting started
 
 ### 1. Download example and install dependencies
 
@@ -34,7 +34,7 @@ yarn
 
 Run the following to generate the types, schema and model.
 
-You need to run this every time you make changes to `.prisma` file, as it generates the `schema.prisma` file which is used by the app.
+You need to run this every time you make changes to `.prisma` file or to `graphql` files, as it generates the `schema.prisma`, `nexus-typegen.ts` and `schema.graphql` files which are used by the app.
 
 ```
 yarn generate
@@ -45,6 +45,8 @@ yarn generate
 Copy the `.env.example` file to a `.env` file next to it.
 
 Edit it to use your own mongodb connection string. If you need a free-to-start managed database, you can also use [MongoDB Atlas](https://www.mongodb.com/atlas/database).
+
+You can replace mongo with any [prisma supported database](https://www.prisma.io/docs/reference/database-reference/supported-databases).
 
 ### 4. Run the app
 ```
@@ -60,33 +62,29 @@ The app is now running, navigate to [`http://localhost:3000/`](http://localhost:
 * Edit the name & version in the `package.json` file.
 * Edit the code in `src`, apart from the `src/prisma` directory.
 
-<details><summary>Expand for a tour through the UI of the app</summary>
+# Adding new fields, features, queries, mutations
 
-<br />
+### Add new features
+1. Create the corresponding `.model.prisma` file and the `.objectType.api.ts` file
+2. Run `yarn generate`
+3. Create the `.sourceType.ts` file which re-exports the prisma type
+4. Add the `objectType` to `graphql/types/types.sourceType.ts`
 
-**Blog** (located in [`./pages/index.tsx`](./pages/index.tsx))
+### Add new fields to existing features
+1. Modify the corresponding `.model.prisma` file and the `.objectType.api.ts` file
+2. Run `yarn generate`
 
-![](https://imgur.com/eepbOUO.png)
+### Add new queries/mutations
+1. Create `.query.api.ts` or `.mutation.api.ts` file
+2. Add the definition to `graphql/queries/queries.sourceType.ts` or `graphql/mutations/mutations.sourceType.ts`
+3. Run `yarn generate`
+4. Create  `.query.ts` or `.mutation.ts` file
 
-**Signup** (located in [`./pages/signup.tsx`](./pages/signup.tsx))
+### Modify existing queries/mutations
+1. Modify the `.query.api.ts` and `.query.ts` files, or `.mutation.api.ts` and `.mutation.ts` files
+2. Run `yarn generate`
 
-![](https://imgur.com/iE6OaBI.png)
-
-**Create post (draft)** (located in [`./pages/create.tsx`](./pages/create.tsx))
-
-![](https://imgur.com/olCWRNv.png)
-
-**Drafts** (located in [`./pages/drafts.tsx`](./pages/drafts.tsx))
-
-![](https://imgur.com/PSMzhcd.png)
-
-**View post** (located in [`./pages/p/[id].tsx`](./pages/p/[id].tsx)) (delete or publish here)
-
-![](https://imgur.com/zS1B11O.png)
-
-</details>
-
-## Using the GraphQL API
+# Using the GraphQL API
 
 You can also access the GraphQL API of the API server directly. It is running on the same host machine and port and can be accessed via the `/api` route (in this case that is [`localhost:3000/api`](http://localhost:3000/api)).
 

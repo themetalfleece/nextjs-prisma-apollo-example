@@ -4,42 +4,31 @@ import cors from 'micro-cors';
 import { NextApiHandler } from 'next';
 import { asNexusMethod, makeSchema, objectType } from 'nexus';
 import path from 'path';
-import {
-  postMutationDefinitions,
-  postQueryDefinitions,
-} from '../../features/posts';
-import { Post } from '../../features/posts/post.objectType.api';
-import {
-  userMutationDefinitions,
-  userQueryDefinitions,
-} from '../../features/users';
-import { User } from '../../features/users/user.objectType.api';
+import { mutationDefinitions } from '../../graphql/mutations/mutations.sourceType';
+import { queryDefinitions } from '../../graphql/queries/queries.sourceType';
+import { types } from '../../graphql/types/types.sourceType';
 
 export const GQLDate = asNexusMethod(DateTimeResolver, 'date');
-
-const types = [Post, User];
 
 const Query = objectType({
   name: 'Query',
   definition(t) {
-    postQueryDefinitions(t);
-    userQueryDefinitions(t);
+    queryDefinitions(t);
   },
 });
 
 const Mutation = objectType({
   name: 'Mutation',
   definition(t) {
-    postMutationDefinitions(t);
-    userMutationDefinitions(t);
+    mutationDefinitions(t);
   },
 });
 
 export const schema = makeSchema({
   types: [...types, Query, Mutation, GQLDate],
   outputs: {
-    typegen: path.join(process.cwd(), 'generated/nexus-typegen.ts'),
-    schema: path.join(process.cwd(), 'generated/schema.graphql'),
+    typegen: path.join(process.cwd(), 'src/generated/nexus-typegen.ts'),
+    schema: path.join(process.cwd(), 'src/generated/schema.graphql'),
   },
 });
 

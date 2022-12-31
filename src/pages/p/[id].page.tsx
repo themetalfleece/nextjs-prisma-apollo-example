@@ -5,8 +5,12 @@ import { usePublishPostMutation } from '../../features/posts/mutations/publishPo
 import { usePostQuery } from '../../features/posts/queries/post.query';
 
 function Post() {
-  const postId = useRouter().query.id;
-  const { loading, error, data } = usePostQuery({ postId });
+  const postId = useRouter().query.id as string;
+  const { loading, error, data } = usePostQuery({
+    variables: {
+      postId,
+    },
+  });
 
   const [publish] = usePublishPostMutation();
   const [deletePost] = useDeletePostMutation();

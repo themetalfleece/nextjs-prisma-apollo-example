@@ -1,5 +1,5 @@
-import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
+import { getUseMutation } from '../../../graphql/mutations/getUseMutation.util';
 
 const CreateDraftPostMutation = gql`
   mutation CreateDraftPost(
@@ -24,5 +24,6 @@ const CreateDraftPostMutation = gql`
   }
 `;
 
-export const useCreateDraftPostMutation = () =>
-  useMutation(CreateDraftPostMutation);
+export const useCreateDraftPostMutation = getUseMutation<'createDraftPost'>(
+  CreateDraftPostMutation,
+);

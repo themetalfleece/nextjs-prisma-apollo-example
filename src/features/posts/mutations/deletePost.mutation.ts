@@ -1,5 +1,5 @@
-import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
+import { getUseMutation } from '../../../graphql/mutations/getUseMutation.util';
 
 const DeletePostMutation = gql`
   mutation DeletePost($postId: String!) {
@@ -16,4 +16,5 @@ const DeletePostMutation = gql`
   }
 `;
 
-export const useDeletePostMutation = () => useMutation(DeletePostMutation);
+export const useDeletePostMutation =
+  getUseMutation<'deletePost'>(DeletePostMutation);
