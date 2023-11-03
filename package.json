@@ -17,7 +17,7 @@
     "format": "prettier --loglevel silent --write lib/**/*.ts pages/**/*.ts"
   },
   "dependencies": {
-    "@apollo/client": "^3.8.6",
+    "@apollo/client": "^3.8.7",
     "@prisma/client": "^5.5.2",
     "apollo-server-micro": "^3.12.1",
     "express": "^4.18.2",
