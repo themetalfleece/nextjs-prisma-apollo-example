@@ -17,7 +17,7 @@
     "format": "prettier --loglevel silent --write lib/**/*.ts pages/**/*.ts"
   },
   "dependencies": {
-    "@apollo/client": "^3.9.8",
+    "@apollo/client": "^3.9.9",
     "@prisma/client": "^5.11.0",
     "apollo-server-micro": "^3.13.0",
     "express": "^4.19.1",
@@ -37,7 +37,7 @@
     "@types/graphql": "^14.5.0",
     "@types/micro-cors": "^0.1.5",
     "@types/node": "^20.11.30",
-    "@types/react": "^18.2.67",
+    "@types/react": "^18.2.69",
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "@typescript-eslint/parser": "^7.3.1",
     "eslint": "^8.57.0",
