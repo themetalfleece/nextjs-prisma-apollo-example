@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.13.8",
-    "@prisma/client": "^6.7.0",
+    "@prisma/client": "^6.8.1",
     "apollo-server-micro": "^3.13.0",
     "express": "^5.1.0",
     "graphql": "^16.11.0",
@@ -44,7 +44,7 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
     "prettier": "^3.5.3",
-    "prisma": "^6.7.0",
+    "prisma": "^6.8.1",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
