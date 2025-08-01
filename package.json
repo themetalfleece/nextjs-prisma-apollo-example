@@ -47,7 +47,7 @@
     "prisma": "^6.13.0",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3",
+    "typescript": "^5.9.2",
     "typescript-eslint-parser": "^22.0.0"
   },
   "prisma": {
