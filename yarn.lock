@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@aashutoshrathi/word-wrap/-/word-wrap-1.2.6.tgz#bd9154aec9983f77b3a034ecaa015c2e4201f6cf"
   integrity sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==
 
-"@apollo/client@^4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-4.0.2.tgz#a91b34d32ef9900721bbcf493f1a2ccc737ba0db"
-  integrity sha512-3GL9PwBcYMcvUV1sNzzYq8B3396M+WA5NeXj7oTHtBxBINVlHZhoV5mQZOmG2NLrSQeqylhevgIv3W6rGLFbLA==
+"@apollo/client@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-4.0.3.tgz#ef7f3dc444930c5421b9e54dbb842b6e4cb69719"
+  integrity sha512-XCrNpBwVymRLEUbMjiP4WGmeNnP9bRhqX7ZqlEvZRAkYFvLPQyI65/ldAFvyfTnI4vjRLgpkwGKqW2+BelPEiw==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.1"
     "@wry/caches" "^1.0.0"
