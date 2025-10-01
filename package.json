@@ -17,8 +17,8 @@
     "format": "prettier --loglevel silent --write lib/**/*.ts pages/**/*.ts"
   },
   "dependencies": {
-    "@apollo/client": "^4.0.6",
-    "@prisma/client": "^6.16.2",
+    "@apollo/client": "^4.0.7",
+    "@prisma/client": "^6.16.3",
     "apollo-server-micro": "^3.13.0",
     "express": "^5.1.0",
     "graphql": "^16.11.0",
@@ -36,18 +36,18 @@
     "@prisma-utils/prismerge": "^1.7.0",
     "@types/graphql": "^14.5.0",
     "@types/micro-cors": "^0.1.5",
-    "@types/node": "^24.6.0",
-    "@types/react": "^19.1.15",
+    "@types/node": "^24.6.1",
+    "@types/react": "^19.1.16",
     "@typescript-eslint/eslint-plugin": "^8.45.0",
     "@typescript-eslint/parser": "^8.45.0",
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "prettier": "^3.6.2",
-    "prisma": "^6.16.2",
+    "prisma": "^6.16.3",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "typescript-eslint-parser": "^22.0.0"
   },
   "prisma": {
