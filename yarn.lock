@@ -866,10 +866,10 @@
   dependencies:
     "@types/unist" "*"
 
-"@types/micro-cors@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@types/micro-cors/-/micro-cors-0.1.5.tgz#78056823d4cd282040eaaee39786113cb1a917c0"
-  integrity sha512-BTHpXEz+yC/7/Jv2BfDFbGtgnwdKUDVX2PY+Cd2k4Jx9+uUfVooAxhlGEy6p0Uvm0+yM5FgSyc1n2tdVHyCDbw==
+"@types/micro-cors@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@types/micro-cors/-/micro-cors-0.1.6.tgz#91a97cf684cd1fea6156b35e6231a95597aa73d9"
+  integrity sha512-cY5PW/ECcZ22vnx0+V8qPBrr8PFFGNTGySeD3JHXicZUICu8KZWz9iQHsJyhv2+SsxGYMLHc2HRMU8aVQICTIw==
   dependencies:
     "@types/micro" "^7.3.7"
 
